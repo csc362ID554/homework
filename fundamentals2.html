@@ -1,0 +1,67 @@
+<!-- fundamentals2.html -->
+​
+<body>
+  ​<svg id="chart" width="1000" height="300"></svg>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <script>
+    const array = [92, 56, 14, 73, 22, 38, 93, 45, 55];
+
+    d3.select("#chart")
+      .selectAll("circle")
+      .data(array)
+      .enter()
+      .append("circle")
+        .attr("r", d => d/2)
+        .attr("cx", d => 50+100*(array.indexOf(d)))
+        .attr("cy", 100)
+
+
+
+    setTimeout(function() {
+        d3.select("#chart")
+          .selectAll("circle")
+          .data(array.sort((a,b) => a-b))
+          .transition().duration(1500)
+              .attr("r", d => d/2)
+              .attr("cx", d => 50+100*(array.indexOf(d)))
+              .attr("cy", 100)
+              .attr("stroke", "red")
+              .attr("fill", "blue")
+        }, 2000)
+
+  </script>
+</body>
+
+<!--
+    given: <input type="number" name="given" id="given"><br>
+    <button onclick="factors()">Factors</button>
+
+    <script>
+      const factorList = [];
+
+      function factors() {
+        var given = document.getElementById('given').value;
+        var divi = given / 2;
+        alert(divi);
+        for (var i = given; i > 0; i--){
+          if ((given/i).isInteger()){
+            factorList.push(given/i);
+          }
+        }
+        alert(factorList);
+
+          d3.select("#chart")
+            .selectAll("circle")
+            .data(factorList)
+            .enter()
+            .append("circle")
+              .attr("r", given/i)
+              .attr("cx", (given/i)*10)
+              .attr("stroke", "red")
+              .attr("stroke-width", "10")
+      }
+-->
+
+​
+​
