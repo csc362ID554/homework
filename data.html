@@ -1,0 +1,101 @@
+<!--Ben Yokoyama-->
+<body>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- Set up basic webpage structure -->
+  <div id="header"></div>
+  <div id="nominal"></div>
+  <div id="ordinal"></div>
+  <div id="interval"></div>
+  <div id="ratio"></div>
+
+  <style>
+    .redback {
+        color: white;
+        background-color: red;
+    }
+    .red {
+        color: red;
+    }
+    .green {
+        color: green;
+    }
+    .blueback {
+        color: white;
+        background-color: blue;
+    }
+    .purple {
+        color: #984ea3;
+    }
+    .yellowback {
+        color: white;
+        background-color: #fecf6a;
+    }
+    .yellow {
+        color: #fecf6a;
+    }
+    .pink {
+        color: magenta;
+    }
+    .pinkback {
+        color: white;
+        background-color: magenta;
+    }
+    .blue {
+        color: #2554C7;
+    }
+  </style>
+
+  <script>
+    //your code goes here
+
+    d3.select("#header")
+      .insert("h1")
+      .classed('purple', true)
+      .text("A Guide to the 4 Data Types");
+
+    d3.select("#header")
+      .insert("h2")
+      .classed("green", true)
+      .text("There are four different data types to be explored, helpfully brought together by the acronym NOIR: Nominal, Ordinal, Interval, and Ratio.");
+
+    d3.select("#nominal")
+      .insert("h3")
+      .classed("blueback", true)
+      .text("Nominal")
+    d3.select("#nominal")
+      .insert("text")
+      .classed("blue", true)
+      .text("Nominal data types are qualitative values. Within scales including nominal data types, there is no overlap or and no quantitative significance. One example is a True/False response, where the user most choose between two quantitative values.")
+
+    d3.select("#ordinal")
+      .insert("h3")
+      .classed("redback", true)
+      .text("Ordinal")
+    d3.select("#ordinal")
+      .insert("text")
+      .classed("red", true)
+      .text("In an ordinal scale, the order of the scale represents the extremity of each data point. Howvever, the differences between the values on the scale are not quantifiable. An example of an ordinal scale is many of the questions in the course evaluations at Davidson, which range from very dissatisfied to very satisfied with a given aspect of a course.")
+
+    d3.select("#interval")
+      .insert("h3")
+      .classed("yellowback", true)
+      .text("Interval")
+    d3.select("#interval")
+      .insert("text")
+      .classed("yellow", true)
+      .text("Unlike the previous two scale types, interval scales are capable of quantitatively able to measure differences between data points. The key difference of interval scales is that they do not start at 0 and counting can begin most anywhere on the numerical scale. Examples include degrees Farenheit and Celsuis, as well as time of day.")
+
+    d3.select("#ratio")
+      .insert("h3")
+      .classed("pinkback", true)
+      .text("Ratio")
+    d3.select("#ratio")
+      .insert("text")
+      .classed("pink", true)
+      .text("Ratio scales are similar to interval scales in that they tell order and allow for measurement between data points. Unlike interval, they contain a true zero and the scalar counting begins there. Examples of ratios scales include batting average in baseball or number of hours worked in a day.")
+
+
+  </script>
+
+</body>
